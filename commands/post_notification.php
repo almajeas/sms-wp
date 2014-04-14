@@ -31,10 +31,10 @@ if(!class_exists('PostNotification'))
             $post = get_post($post_id);
             $author = get_userdata($post->post_author);
             $format = "New post (ID %u) by %s (ID %d) (email %s) titled \"%s\"";
-            $text = sprintf($format, $post->ID, $author->display_name, $author->ID, $author->user_email, $post->post_title);
+            $new_sms = sprintf($format, $post->ID, $author->display_name, $author->ID, $author->user_email, $post->post_title);
             $options = get_option('plugin_options');
             if($options['sms_wp_notification_post_send_sms']){
-                parent::send_sms($text);
+                parent::send_sms($new_sms);
             }
             return $new_sms;
         }
