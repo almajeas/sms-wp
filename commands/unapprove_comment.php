@@ -46,6 +46,7 @@ if(!class_exists('UnapproveComment'))
             if($options['sms_wp_command_unapprove_comment_reply_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
       }
 
 

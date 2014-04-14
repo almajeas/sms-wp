@@ -52,6 +52,7 @@ if(!class_exists('AppendToPost'))
         if($options['sms_wp_command_append_to_post_reply_send_sms']){
           parent::send_sms($new_sms);
         }
+        return $new_sms;
       }
 
     }

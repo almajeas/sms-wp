@@ -36,13 +36,13 @@ if(!class_exists('Post'))
               );
           
           $new_id = wp_insert_post($post);
-          
           set_post_format($new_id, 'status' );
           $new_sms = "posted id:[" . $new_id . ']'; 
-         $options = get_option('plugin_options');
-            if($options['sms_wp_command_post_reply_send_sms']){
-                parent::send_sms($new_sms); 
-            } 
+          $options = get_option('plugin_options');
+          if($options['sms_wp_command_post_reply_send_sms']){
+              parent::send_sms($new_sms); 
+          }
+          return $new_sms; 
         }
 
     }

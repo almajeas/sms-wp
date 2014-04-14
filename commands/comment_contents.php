@@ -47,6 +47,7 @@ if(!class_exists('CommentContents'))
             if($options['sms_wp_command_comment_contents_enabled_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
         }
     }
     new CommentContents();

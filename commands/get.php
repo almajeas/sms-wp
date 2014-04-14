@@ -53,7 +53,8 @@ if(!class_exists('Get'))
             $options = get_option('plugin_options');
             if($options['sms_wp_command_get_enabled_send_sms']){
                 parent::send_sms($new_sms); 
-            }  
+            } 
+            return $new_sms;
         }
     }
 

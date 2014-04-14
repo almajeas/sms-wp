@@ -46,6 +46,7 @@ if(!class_exists('SpamComment'))
             if($options['sms_wp_command_spam_comment_reply_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
       }
 
 

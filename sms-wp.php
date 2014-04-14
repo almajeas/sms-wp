@@ -74,9 +74,9 @@ if(!class_exists('WP_SMS_Plugin'))
       public function execute_command($parsed_sms){
         $command = $parsed_sms[1];
         if ( isset( $this->commands[$command] ) ) {
-          call_user_func( $this->commands[$command], $parsed_sms[2] );
+          return call_user_func( $this->commands[$command], $parsed_sms[2] );
         } else {
-         $this->send_sms("unrecognized command");
+         return $this->send_sms("unrecognized command");
         }
       }
 

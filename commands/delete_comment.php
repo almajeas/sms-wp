@@ -46,6 +46,7 @@ if(!class_exists('DeleteComment'))
             if($options['sms_wp_command_delete_comment_reply_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
       }
 
 

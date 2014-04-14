@@ -44,6 +44,7 @@ if(!class_exists('ApproveComment'))
             if($options['sms_wp_command_approve_comment_reply_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
       }
 
 

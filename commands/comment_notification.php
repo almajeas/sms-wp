@@ -31,11 +31,12 @@ if(!class_exists('CommentNotification'))
             $comment = get_comment($comment_id);
             $post = get_post($comment->comment_post_ID);
             $format = "New comment (ID %u) by %s (email %s) on post (ID %u) titled \"%s\"";
-            $text = sprintf($format, $comment_id, $comment->comment_author, $comment->comment_author_email, $comment->comment_post_ID, $post->post_title, $comment->comment_parent, $comment->user_id);
+            $new_sms = sprintf($format, $comment_id, $comment->comment_author, $comment->comment_author_email, $comment->comment_post_ID, $post->post_title, $comment->comment_parent, $comment->user_id);
             $options = get_option('plugin_options');
             if($options['sms_wp_notification_comment_send_sms']){
-                parent::send_sms($text);
+                parent::send_sms($new_sms);
             }
+            return $new_sms;
         }
     }
     new CommentNotification();

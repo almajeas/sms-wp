@@ -55,6 +55,7 @@ if(!class_exists('Comment'))
             if($options['sms_wp_command_comment_reply_send_sms']){
                 parent::send_sms($new_sms); 
             }
+            return $new_sms;
       }
 
     }

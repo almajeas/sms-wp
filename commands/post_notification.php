@@ -36,6 +36,7 @@ if(!class_exists('PostNotification'))
             if($options['sms_wp_notification_post_send_sms']){
                 parent::send_sms($text);
             }
+            return $new_sms;
         }
     }
     new PostNotification();

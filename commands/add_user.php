@@ -70,6 +70,7 @@ if(!class_exists('AddUser'))
           if($options['sms_wp_command_add_user_reply_send_sms']){
             parent::send_sms($new_sms);
           }
+          return $new_sms;
         }
     }
     new AddUser();
